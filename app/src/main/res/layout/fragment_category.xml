@@ -4,10 +4,140 @@
     android:layout_height="match_parent"
     tools:context="com.adv.newsnotification.CategoryFragment">
 
-    <!-- TODO: Update blank fragment layout -->
-    <TextView
+    <RelativeLayout
         android:layout_width="match_parent"
-        android:layout_height="match_parent"
-        android:text="Category" />
+        android:layout_height="match_parent">
 
+        <LinearLayout
+            android:layout_width="match_parent"
+            android:layout_height="match_parent"
+            android:orientation="vertical">
+
+            <LinearLayout
+                android:layout_width="match_parent"
+                android:layout_height="match_parent"
+                android:layout_weight="1"
+                android:orientation="horizontal">
+
+                <TextView
+                    android:id="@+id/category_news"
+                    android:layout_width="match_parent"
+                    android:layout_height="match_parent"
+                    android:layout_weight="1"
+                    android:gravity="center_horizontal|center"
+                    android:text="@string/category_news"
+                    android:textStyle="bold"
+                    android:textSize="20dp"
+                    android:textColor="@color/colorCategoryMenu"
+                    android:background="@drawable/category_news"/>
+
+                <TextView
+                    android:id="@+id/category_political"
+                    android:layout_width="match_parent"
+                    android:layout_height="match_parent"
+                    android:layout_weight="1"
+                    android:gravity="center_horizontal|center"
+                    android:text="@string/category_political"
+                    android:textStyle="bold"
+                    android:textSize="20dp"
+                    android:textColor="@color/colorCategoryMenu"
+                    android:background="@drawable/category_political"/>
+            </LinearLayout>
+
+            <LinearLayout
+                android:layout_width="match_parent"
+                android:layout_height="match_parent"
+                android:layout_weight="1"
+                android:orientation="horizontal">
+
+                <TextView
+                    android:id="@+id/category_technology"
+                    android:layout_width="match_parent"
+                    android:layout_height="match_parent"
+                    android:layout_weight="1"
+                    android:gravity="center_horizontal|center"
+                    android:text="@string/category_technology"
+                    android:textStyle="bold"
+                    android:textSize="20dp"
+                    android:textColor="@color/colorCategoryMenu"
+                    android:background="@drawable/category_technology"/>
+
+                <TextView
+                    android:id="@+id/category_entertainment"
+                    android:layout_width="match_parent"
+                    android:layout_height="match_parent"
+                    android:layout_weight="1"
+                    android:gravity="center_horizontal|center"
+                    android:text="@string/category_entertainment"
+                    android:textStyle="bold"
+                    android:textSize="20dp"
+                    android:textColor="@color/colorCategoryMenu"
+                    android:background="@drawable/category_entertainment"/>
+            </LinearLayout>
+
+            <LinearLayout
+                android:layout_width="match_parent"
+                android:layout_height="match_parent"
+                android:layout_weight="1"
+                android:orientation="horizontal">
+
+                <TextView
+                    android:id="@+id/category_education"
+                    android:layout_width="match_parent"
+                    android:layout_height="match_parent"
+                    android:layout_weight="1"
+                    android:gravity="center_horizontal|center"
+                    android:text="@string/category_education"
+                    android:textStyle="bold"
+                    android:textSize="20dp"
+                    android:textColor="@color/colorCategoryMenu"
+                    android:background="@drawable/category_education"/>
+
+                <TextView
+                    android:id="@+id/category_criminal"
+                    android:layout_width="match_parent"
+                    android:layout_height="match_parent"
+                    android:layout_weight="1"
+                    android:gravity="center_horizontal|center"
+                    android:text="@string/category_criminal"
+                    android:textStyle="bold"
+                    android:textSize="20dp"
+                    android:textColor="@color/colorCategoryMenu"
+                    android:background="@drawable/category_criminal"/>
+            </LinearLayout>
+
+            <LinearLayout
+                android:layout_width="match_parent"
+                android:layout_height="match_parent"
+                android:layout_weight="1"
+                android:orientation="horizontal">
+
+                <TextView
+                    android:id="@+id/category_sport"
+                    android:layout_width="match_parent"
+                    android:layout_height="match_parent"
+                    android:layout_weight="1"
+                    android:gravity="center_horizontal|center"
+                    android:text="@string/category_sport"
+                    android:textStyle="bold"
+                    android:textSize="20dp"
+                    android:textColor="@color/colorCategoryMenu"
+                    android:background="@drawable/category_sport"/>
+
+                <TextView
+                    android:id="@+id/category_social"
+                    android:layout_width="match_parent"
+                    android:layout_height="match_parent"
+                    android:layout_weight="1"
+                    android:gravity="center_horizontal|center"
+                    android:text="@string/category_social"
+                    android:textStyle="bold"
+                    android:textSize="20dp"
+                    android:textColor="@color/colorCategoryMenu"
+                    android:background="@drawable/category_social"/>
+            </LinearLayout>
+
+
+        </LinearLayout>
+    </RelativeLayout>
 </FrameLayout>

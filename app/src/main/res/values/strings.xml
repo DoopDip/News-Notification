@@ -3,5 +3,13 @@
     <string name="title_home">Home</string>
     <string name="title_category">Category</string>
     <string name="title_setting">Setting</string>
-    <string name="switch_tag">Switch Tag</string>
+    <string name="switch_tag">Tag</string>
+    <string name="category_news">News</string>
+    <string name="category_technology">Technology</string>
+    <string name="category_sport">Sport</string>
+    <string name="category_entertainment">Entertainment</string>
+    <string name="category_political">Political</string>
+    <string name="category_criminal">Criminal</string>
+    <string name="category_social">Social</string>
+    <string name="category_education">Education</string>
 </resources>
