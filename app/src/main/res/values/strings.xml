@@ -1,14 +1,17 @@
 <resources>
     <string name="app_name">News Notification</string>
-    <string name="title_home">Home</string>
-    <string name="title_category">Category</string>
-    <string name="title_setting">Setting</string>
-    <string name="category_news">News</string>
-    <string name="category_technology">Technology</string>
-    <string name="category_sport">Sport</string>
-    <string name="category_entertainment">Entertainment</string>
-    <string name="category_political">Political</string>
-    <string name="category_criminal">Criminal</string>
-    <string name="category_social">Social</string>
-    <string name="category_education">Education</string>
+    <string name="title_home">หน้าหลัก</string>
+    <string name="title_category">ประเภท</string>
+    <string name="title_setting">ตั้งค่า</string>
+    <string name="category_news">ข่าวเศรษกิจ</string>
+    <string name="category_technology">ข่าวเทคโนโลยี</string>
+    <string name="category_sport">ข่าวกีฬา</string>
+    <string name="category_entertainment">ข่าวบันเทิง</string>
+    <string name="category_political">ข่าวการเมือง</string>
+    <string name="category_criminal">ข่าวอาชญากรรม</string>
+    <string name="category_social">ข่าวสังคม</string>
+    <string name="category_education">ข่าวการศึกษา</string>
+
+    <!-- TODO: Remove or change this placeholder text -->
+    <string name="hello_blank_fragment">Hello blank fragment</string>
 </resources>
