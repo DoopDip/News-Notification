@@ -3,6 +3,8 @@
     <string name="title_home">หน้าหลัก</string>
     <string name="title_category">ประเภท</string>
     <string name="title_setting">ตั้งค่า</string>
+    <string name="title_news">หัวข้อข่าว</string>
+    <string name="content_news">เนื้อหาข่าว</string>
     <string name="category_news">ข่าวเศรษกิจ</string>
     <string name="category_technology">ข่าวเทคโนโลยี</string>
     <string name="category_sport">ข่าวกีฬา</string>
@@ -12,6 +14,5 @@
     <string name="category_social">ข่าวสังคม</string>
     <string name="category_education">ข่าวการศึกษา</string>
 
-    <!-- TODO: Remove or change this placeholder text -->
-    <string name="hello_blank_fragment">Hello blank fragment</string>
+
 </resources>

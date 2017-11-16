@@ -1,10 +1,15 @@
 package com.adv.newsnotification;
 
+import android.app.FragmentTransaction;
+import android.content.Context;
+import android.content.Intent;
 import android.support.v7.widget.RecyclerView;
+import android.util.Log;
 import android.view.LayoutInflater;
 import android.view.View;
 import android.view.ViewGroup;
 import android.widget.ImageView;
+import android.widget.RelativeLayout;
 import android.widget.TextView;
 
 import com.squareup.picasso.Picasso;
@@ -33,6 +38,7 @@ public class NewsAdapter extends RecyclerView.Adapter<NewsAdapter.NewsHolder> {
     public void onBindViewHolder(NewsHolder holder, int position) {
         News news = list.get(position);
         holder.textView.setText(news.title);
+        holder.newsId = news.id;
 
         Picasso.with(holder.imageView.getContext()).load(news.image).into(holder.imageView);
     }
@@ -44,14 +50,31 @@ public class NewsAdapter extends RecyclerView.Adapter<NewsAdapter.NewsHolder> {
 
     static class NewsHolder extends RecyclerView.ViewHolder {
 
+        private Context context;
+
         public ImageView imageView;
         public TextView textView;
+        public RelativeLayout relativeLayout;
+
+        public int newsId;
 
         public NewsHolder(View itemView) {
             super(itemView);
 
             imageView = (ImageView) itemView.findViewById(R.id.listNews_image);
             textView = (TextView) itemView.findViewById(R.id.listNews_title);
+
+            relativeLayout = (RelativeLayout) itemView.findViewById(R.id.listNews_box);
+            context = itemView.getContext();
+            relativeLayout.setOnClickListener(new View.OnClickListener() {
+                @Override
+                public void onClick(View v) {
+                    Log.d("NewsClick","List:"+getAdapterPosition()+" / NewsID:"+newsId);
+                    Intent intent = new Intent(context , ReadActivity.class);
+                    intent.putExtra("newsId", newsId);
+                    context.startActivity(intent);
+                }
+            });
         }
     }
 }

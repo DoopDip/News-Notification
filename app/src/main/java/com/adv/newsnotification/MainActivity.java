@@ -1,5 +1,6 @@
 package com.adv.newsnotification;
 
+import android.content.Context;
 import android.os.Bundle;
 import android.support.annotation.NonNull;
 import android.support.design.widget.BottomNavigationView;
@@ -7,8 +8,12 @@ import android.support.v4.app.FragmentActivity;
 import android.support.v4.app.FragmentTransaction;
 import android.util.Log;
 import android.view.MenuItem;
+import android.view.View;
+import android.widget.RelativeLayout;
 
 public class MainActivity extends FragmentActivity {
+
+    private FragmentTransaction fragmentTransaction;
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
@@ -16,16 +21,14 @@ public class MainActivity extends FragmentActivity {
         setContentView(R.layout.activity_main);
 
         //First Fragment
-        HomeFragment homeFragment = new HomeFragment();
-        FragmentTransaction fragmentTransaction = getSupportFragmentManager().beginTransaction();
-        fragmentTransaction.replace(R.id.main_frameLayout, homeFragment)
-                .addToBackStack(null).commit();
+        fragmentTransaction = getSupportFragmentManager().beginTransaction();
+        fragmentTransaction.replace(R.id.main_frameLayout, new HomeFragment()).addToBackStack(null).commit();
 
         BottomNavigationView bottomNavigationView = (BottomNavigationView) findViewById(R.id.main_navigation);
         bottomNavigationView.setOnNavigationItemSelectedListener(new BottomNavigationView.OnNavigationItemSelectedListener() {
             @Override
             public boolean onNavigationItemSelected(@NonNull MenuItem item) {
-                FragmentTransaction fragmentTransaction = getSupportFragmentManager().beginTransaction();
+                fragmentTransaction = getSupportFragmentManager().beginTransaction();
                 switch (item.getItemId()) {
                     case R.id.navigation_home:
                         Log.d("Click","Home");
