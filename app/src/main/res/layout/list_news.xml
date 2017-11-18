@@ -3,7 +3,10 @@
     android:id="@+id/listNews_box"
     xmlns:android="http://schemas.android.com/apk/res/android"
     android:layout_width="match_parent"
-    android:layout_height="250dp">
+    android:layout_height="250dp"
+    android:layout_marginLeft="8dp"
+    android:layout_marginRight="8dp"
+    android:layout_marginBottom="8dp">
 
     <ImageView
         android:id="@+id/listNews_image"
@@ -19,9 +22,25 @@
         android:layout_height="wrap_content"
         android:text="หัวข้อข่าว"
         android:layout_alignParentBottom="true"
-        android:gravity="center"
-        android:background="#d2000000"
-        android:padding="10dp"
-        android:textSize="25dp"/>
+        android:paddingLeft="20dp"
+        android:paddingTop="10dp"
+        android:paddingBottom="10dp"
+        android:paddingRight="10dp"
+        android:background="#b7000000"
+        android:textColor="#fff"
+        android:textSize="22dp"/>
+
+    <TextView
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginTop="30dp"
+        android:layout_marginLeft="20dp"
+        android:background="#baffffff"
+        android:textColor="#c0000000"
+        android:paddingTop="5dp"
+        android:paddingBottom="5dp"
+        android:paddingRight="10dp"
+        android:paddingLeft="10dp"
+        android:text="ประเภทข่าว"/>
 
 </RelativeLayout>
