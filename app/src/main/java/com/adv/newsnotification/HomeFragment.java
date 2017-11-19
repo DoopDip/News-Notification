@@ -34,6 +34,6 @@ public class HomeFragment extends Fragment {
 
         recyclerView = (RecyclerView) view.findViewById(R.id.home_recyclerView);
         recyclerView.setLayoutManager(new LinearLayoutManager(view.getContext()));
-        recyclerView.setAdapter(new NewsAdapter(FakeNews.listNews()));
+        recyclerView.setAdapter(new NewsAdapter(SelectNews.listNews(SelectNews.ALL_NEWS, SelectNews.NO_ID)));
     }
 }

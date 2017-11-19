@@ -16,21 +16,19 @@ public class ReadActivity extends AppCompatActivity {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_read);
 
-
-
-        List<News> news = FakeNews.listNews();
-
         Bundle bundle = getIntent().getExtras();
-        int idNews = bundle.getInt("newsId")-1;
+        int idNews = bundle.getInt("newsId");
+
+        List<News> news = SelectNews.listNews(SelectNews.ALL_NEWS, idNews);
 
         TextView textViewTitle = (TextView) findViewById(R.id.read_title);
-        textViewTitle.setText(news.get(idNews).title);
+        textViewTitle.setText(news.get(0).title);
 
         ImageView imageView = (ImageView) findViewById(R.id.read_image);
-        Picasso.with(this).load(news.get(idNews).image).into(imageView);
+        Picasso.with(this).load(news.get(0).image).into(imageView);
 
         TextView textViewContent = (TextView) findViewById(R.id.read_content);
-        textViewContent.setText(news.get(idNews).content);
+        textViewContent.setText(news.get(0).content);
 
     }
 }
