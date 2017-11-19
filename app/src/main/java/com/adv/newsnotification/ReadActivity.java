@@ -2,11 +2,14 @@ package com.adv.newsnotification;
 
 import android.support.v7.app.AppCompatActivity;
 import android.os.Bundle;
+import android.util.Log;
 import android.widget.ImageView;
 import android.widget.TextView;
 
+import com.pushbots.push.Pushbots;
 import com.squareup.picasso.Picasso;
 
+import java.lang.reflect.Field;
 import java.util.List;
 
 public class ReadActivity extends AppCompatActivity {
@@ -17,9 +20,10 @@ public class ReadActivity extends AppCompatActivity {
         setContentView(R.layout.activity_read);
 
         Bundle bundle = getIntent().getExtras();
-        int idNews = bundle.getInt("newsId");
+        String idNews = bundle.getString("newsId");
+        Log.d("idNews","="+idNews);
 
-        List<News> news = SelectNews.listNews(SelectNews.ALL_NEWS, idNews);
+        List<News> news = SelectNews.listNews(SelectNews.ALL_NEWS, Integer.parseInt(idNews));
 
         TextView textViewTitle = (TextView) findViewById(R.id.read_title);
         textViewTitle.setText(news.get(0).title);
