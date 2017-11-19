@@ -11,6 +11,8 @@ import android.view.MenuItem;
 import android.view.View;
 import android.widget.RelativeLayout;
 
+import com.pushbots.push.Pushbots;
+
 public class MainActivity extends FragmentActivity {
 
     private FragmentTransaction fragmentTransaction;
@@ -19,6 +21,9 @@ public class MainActivity extends FragmentActivity {
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_main);
+
+        Pushbots.sharedInstance().init(this);
+        Pushbots.sharedInstance().registerForRemoteNotifications();
 
         //First Fragment
         fragmentTransaction = getSupportFragmentManager().beginTransaction();

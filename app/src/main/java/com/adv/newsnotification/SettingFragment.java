@@ -10,6 +10,8 @@ import android.view.View;
 import android.view.ViewGroup;
 import android.widget.Switch;
 
+import com.pushbots.push.Pushbots;
+
 
 /**
  * A simple {@link Fragment} subclass.
@@ -46,6 +48,8 @@ public class SettingFragment extends Fragment {
     public void onViewCreated(View view, @Nullable Bundle savedInstanceState) {
         super.onViewCreated(view, savedInstanceState);
 
+        Pushbots.sharedInstance().init(view.getContext());
+
         settings = getActivity().getSharedPreferences(NAME_FILE_SETTING, 0);
 
         switchNews = (Switch) view.findViewById(R.id.switch_news);
@@ -71,10 +75,13 @@ public class SettingFragment extends Fragment {
             @Override
             public void onClick(View v) {
                 editor = settings.edit();
-                if (switchNews.isChecked())
+                if (switchNews.isChecked()) {
+                    Pushbots.sharedInstance().tag(String.valueOf(SelectNews.NEWS_NEWS));
                     editor.putBoolean("switchNews", true);
-                else
+                } else {
+                    Pushbots.sharedInstance().untag(String.valueOf(SelectNews.NEWS_NEWS));
                     editor.putBoolean("switchNews", false);
+                }
                 editor.commit();
             }
         });
@@ -82,10 +89,13 @@ public class SettingFragment extends Fragment {
             @Override
             public void onClick(View v) {
                 editor = settings.edit();
-                if (switchPolitical.isChecked())
+                if (switchPolitical.isChecked()) {
+                    Pushbots.sharedInstance().tag(String.valueOf(SelectNews.POLITICAL_NEWS));
                     editor.putBoolean("switchPolitical", true);
-                else
+                } else {
+                    Pushbots.sharedInstance().untag(String.valueOf(SelectNews.POLITICAL_NEWS));
                     editor.putBoolean("switchPolitical", false);
+                }
                 editor.commit();
             }
         });
@@ -93,10 +103,13 @@ public class SettingFragment extends Fragment {
             @Override
             public void onClick(View v) {
                 editor = settings.edit();
-                if (switchTechnology.isChecked())
+                if (switchTechnology.isChecked()) {
+                    Pushbots.sharedInstance().tag(String.valueOf(SelectNews.TECHNOLOGY_NEWS));
                     editor.putBoolean("switchTechnology", true);
-                else
+                } else {
+                    Pushbots.sharedInstance().untag(String.valueOf(SelectNews.TECHNOLOGY_NEWS));
                     editor.putBoolean("switchTechnology", false);
+                }
                 editor.commit();
             }
         });
@@ -104,10 +117,13 @@ public class SettingFragment extends Fragment {
             @Override
             public void onClick(View v) {
                 editor = settings.edit();
-                if (switchEntertainment.isChecked())
+                if (switchEntertainment.isChecked()) {
+                    Pushbots.sharedInstance().tag(String.valueOf(SelectNews.ENTERTAINMENT_NEWS));
                     editor.putBoolean("switchEntertainment", true);
-                else
+                } else {
+                    Pushbots.sharedInstance().untag(String.valueOf(SelectNews.ENTERTAINMENT_NEWS));
                     editor.putBoolean("switchEntertainment", false);
+                }
                 editor.commit();
             }
         });
@@ -115,10 +131,13 @@ public class SettingFragment extends Fragment {
             @Override
             public void onClick(View v) {
                 editor = settings.edit();
-                if (switchEducation.isChecked())
+                if (switchEducation.isChecked()) {
+                    Pushbots.sharedInstance().tag(String.valueOf(SelectNews.EDUCATION_NEWS));
                     editor.putBoolean("switchEducation", true);
-                else
+                } else {
+                    Pushbots.sharedInstance().untag(String.valueOf(SelectNews.EDUCATION_NEWS));
                     editor.putBoolean("switchEducation", false);
+                }
                 editor.commit();
             }
         });
@@ -126,10 +145,13 @@ public class SettingFragment extends Fragment {
             @Override
             public void onClick(View v) {
                 editor = settings.edit();
-                if (switchCriminal.isChecked())
+                if (switchCriminal.isChecked()) {
+                    Pushbots.sharedInstance().tag(String.valueOf(SelectNews.CRIMINAL_NEWS));
                     editor.putBoolean("switchCriminal", true);
-                else
+                } else {
+                    Pushbots.sharedInstance().untag(String.valueOf(SelectNews.CRIMINAL_NEWS));
                     editor.putBoolean("switchCriminal", false);
+                }
                 editor.commit();
             }
         });
@@ -137,10 +159,13 @@ public class SettingFragment extends Fragment {
             @Override
             public void onClick(View v) {
                 editor = settings.edit();
-                if (switchSport.isChecked())
+                if (switchSport.isChecked()) {
+                    Pushbots.sharedInstance().tag(String.valueOf(SelectNews.SPORT_NEWS));
                     editor.putBoolean("switchSport", true);
-                else
+                } else {
+                    Pushbots.sharedInstance().untag(String.valueOf(SelectNews.SPORT_NEWS));
                     editor.putBoolean("switchSport", false);
+                }
                 editor.commit();
             }
         });
@@ -148,10 +173,14 @@ public class SettingFragment extends Fragment {
             @Override
             public void onClick(View v) {
                 editor = settings.edit();
-                if (switchSocial.isChecked())
+                if (switchSocial.isChecked()) {
+                    Pushbots.sharedInstance().tag(String.valueOf(SelectNews.SOCIAL_NEWS));
                     editor.putBoolean("switchSocial", true);
-                else
+                }
+                else {
+                    Pushbots.sharedInstance().untag(String.valueOf(SelectNews.SOCIAL_NEWS));
                     editor.putBoolean("switchSocial", false);
+                }
                 editor.commit();
             }
         });
