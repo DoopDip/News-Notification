@@ -37,8 +37,10 @@ public class NewsAdapter extends RecyclerView.Adapter<NewsAdapter.NewsHolder> {
     @Override
     public void onBindViewHolder(NewsHolder holder, int position) {
         News news = list.get(position);
-        holder.textView.setText(news.title);
+        holder.textViewTitle.setText(news.title);
         holder.newsId = news.id;
+
+        holder.textViewType.setText(""+news.type);
 
         Picasso.with(holder.imageView.getContext()).load(news.image).into(holder.imageView);
     }
@@ -53,7 +55,8 @@ public class NewsAdapter extends RecyclerView.Adapter<NewsAdapter.NewsHolder> {
         private Context context;
 
         public ImageView imageView;
-        public TextView textView;
+        public TextView textViewTitle;
+        public TextView textViewType;
         public RelativeLayout relativeLayout;
 
         public int newsId;
@@ -62,7 +65,8 @@ public class NewsAdapter extends RecyclerView.Adapter<NewsAdapter.NewsHolder> {
             super(itemView);
 
             imageView = (ImageView) itemView.findViewById(R.id.listNews_image);
-            textView = (TextView) itemView.findViewById(R.id.listNews_title);
+            textViewTitle = (TextView) itemView.findViewById(R.id.listNews_title);
+            textViewType = (TextView) itemView.findViewById(R.id.listNews_type);
 
             relativeLayout = (RelativeLayout) itemView.findViewById(R.id.listNews_box);
             context = itemView.getContext();
@@ -77,4 +81,5 @@ public class NewsAdapter extends RecyclerView.Adapter<NewsAdapter.NewsHolder> {
             });
         }
     }
+
 }

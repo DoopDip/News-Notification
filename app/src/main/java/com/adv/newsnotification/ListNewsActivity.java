@@ -14,8 +14,9 @@ public class ListNewsActivity extends AppCompatActivity {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_list_news);
 
+        Bundle bundle = getIntent().getExtras();
         recyclerView = (RecyclerView) findViewById(R.id.listNews_recyclerView);
         recyclerView.setLayoutManager(new LinearLayoutManager(this));
-        recyclerView.setAdapter(new NewsAdapter(FakeNews.listNews()));
+        recyclerView.setAdapter(new NewsAdapter(SelectNews.listNews(bundle.getInt("newsType"), SelectNews.NO_ID)));
     }
 }
