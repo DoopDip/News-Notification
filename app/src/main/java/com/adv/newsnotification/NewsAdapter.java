@@ -22,6 +22,15 @@ import java.util.List;
 
 public class NewsAdapter extends RecyclerView.Adapter<NewsAdapter.NewsHolder> {
 
+    private final String TAG_NEWS = "ข่าวเศรษกิจ";
+    private final String TAG_POLITICAL = "ข่าวการเมือง";
+    private final String TAG_TECHNOLOGY = "ข่าวเทคโนโลยี";
+    private final String TAG_ENTERTAINMENT = "ข่าวบันเทิง";
+    private final String TAG_EDUCATION = "ข่าวการศึกษา";
+    private final String TAG_CRIMINAL = "ข่าวอาชญากรรม";
+    private final String TAG_SPORT = "ข่าวกีฬา";
+    private final String TAG_SOCIAL = "ข่าวสังคม";
+
     private List<News> list;
 
     public NewsAdapter(List<News> list) {
@@ -40,7 +49,7 @@ public class NewsAdapter extends RecyclerView.Adapter<NewsAdapter.NewsHolder> {
         holder.textViewTitle.setText(news.title);
         holder.newsId = news.id;
 
-        holder.textViewType.setText(""+news.type);
+        holder.textViewType.setText(tagsName(news.type));
 
         Picasso.with(holder.imageView.getContext()).load(news.image).into(holder.imageView);
     }
@@ -80,6 +89,26 @@ public class NewsAdapter extends RecyclerView.Adapter<NewsAdapter.NewsHolder> {
                 }
             });
         }
+    }
+
+    private String tagsName(int tag) {
+        if (tag == 1)
+            return TAG_NEWS;
+        else if (tag == 2)
+            return TAG_POLITICAL;
+        else if (tag == 3)
+            return TAG_TECHNOLOGY;
+        else if (tag == 4)
+            return TAG_ENTERTAINMENT;
+        else if (tag == 5)
+            return TAG_EDUCATION;
+        else if (tag == 6)
+            return TAG_CRIMINAL;
+        else if (tag == 7)
+            return TAG_SPORT;
+        else if (tag == 8)
+            return TAG_SOCIAL;
+        return "Tags Error";
     }
 
 }

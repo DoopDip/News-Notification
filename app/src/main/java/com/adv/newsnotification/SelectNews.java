@@ -1,6 +1,5 @@
 package com.adv.newsnotification;
 
-import android.graphics.Movie;
 import android.os.StrictMode;
 
 import org.json.JSONArray;
@@ -55,7 +54,7 @@ public class SelectNews {
         getHttp http = new getHttp();
         List<News> news = null;
         try {
-            news = http.run(URL+urlOption);
+            news = http.run(URL+""+urlOption);
         } catch (IOException e) {
             // TODO Auto-generated catch block
             e.printStackTrace();
