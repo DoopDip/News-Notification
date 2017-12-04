@@ -1,6 +1,5 @@
 package com.adv.newsnotification;
 
-import android.app.FragmentTransaction;
 import android.content.Context;
 import android.content.Intent;
 import android.support.v7.widget.RecyclerView;
@@ -91,6 +90,7 @@ public class NewsAdapter extends RecyclerView.Adapter<NewsAdapter.NewsHolder> {
         }
     }
 
+    //SHOW Tag Name
     private String tagsName(int tag) {
         if (tag == 1)
             return TAG_NEWS;
