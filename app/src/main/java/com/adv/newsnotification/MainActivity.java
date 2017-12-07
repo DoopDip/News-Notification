@@ -1,6 +1,5 @@
 package com.adv.newsnotification;
 
-import android.content.Context;
 import android.os.Bundle;
 import android.support.annotation.NonNull;
 import android.support.design.widget.BottomNavigationView;
@@ -8,8 +7,6 @@ import android.support.v4.app.FragmentActivity;
 import android.support.v4.app.FragmentTransaction;
 import android.util.Log;
 import android.view.MenuItem;
-import android.view.View;
-import android.widget.RelativeLayout;
 
 import com.pushbots.push.Pushbots;
 

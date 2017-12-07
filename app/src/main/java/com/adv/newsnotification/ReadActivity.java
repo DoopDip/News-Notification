@@ -6,10 +6,8 @@ import android.util.Log;
 import android.widget.ImageView;
 import android.widget.TextView;
 
-import com.pushbots.push.Pushbots;
 import com.squareup.picasso.Picasso;
 
-import java.lang.reflect.Field;
 import java.util.List;
 
 public class ReadActivity extends AppCompatActivity {
