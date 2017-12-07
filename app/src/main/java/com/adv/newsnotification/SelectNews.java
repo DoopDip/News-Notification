@@ -20,7 +20,9 @@ import okhttp3.Response;
 
 public class SelectNews {
 
-    private static final String URL = "http://10.5.50.10:8888/newsnotification/json_news.php?";
+    private static final String URL_HOST = "http://10.5.50.10:8888/newsnotification";
+    private static final String URL_GET_JSON = URL_HOST+"/json_news.php?";
+    private static final String URL_IMAGE = URL_HOST+"/image/";
 
     //Type news
     public static final int ALL_NEWS = 0;
@@ -38,36 +40,62 @@ public class SelectNews {
 
     public static List<News> listNews(int typeNews, int idNews) {
 
-//        // Permission StrictMode
-//        if (android.os.Build.VERSION.SDK_INT > 9) {
-//            StrictMode.ThreadPolicy policy = new StrictMode.ThreadPolicy.Builder().permitAll().build();
-//            StrictMode.setThreadPolicy(policy);
-//        }
-//
-//        String urlOption = "";
-//        if (idNews == 0)
-//            urlOption = "type="+typeNews;
-//        else
-//            urlOption = "id="+idNews;
-//
-//
-//        getHttp http = new getHttp();
-//        List<News> news = null;
-//        try {
-//            news = http.run(URL+""+urlOption);
-//        } catch (IOException e) {
-//            // TODO Auto-generated catch block
-//            e.printStackTrace();
-//        } catch (JSONException e) {
-//            e.printStackTrace();
-//        }
-//
-//        return news ;
+        // Permission StrictMode
+        if (android.os.Build.VERSION.SDK_INT > 9) {
+            StrictMode.ThreadPolicy policy = new StrictMode.ThreadPolicy.Builder().permitAll().build();
+            StrictMode.setThreadPolicy(policy);
+        }
+
+        String urlOption = "";
+        if (idNews == 0)
+            urlOption = "type="+typeNews;
+        else
+            urlOption = "id="+idNews;
 
 
-        ///////////////////////////////////////////////////////////////////////////////////////
-        // Fake News
+        getHttp http = new getHttp();
+        List<News> news = null;
+        try {
+            news = http.run(URL_GET_JSON+""+urlOption);
+        } catch (IOException e) {
+            e.printStackTrace();
+        } catch (JSONException e) {
+            e.printStackTrace();
+        }
 
+        return news ;
+
+
+    }
+
+    public static class getHttp {
+        OkHttpClient client = new OkHttpClient();
+        List<News> news = new ArrayList<>();
+
+        List<News> run(String url) throws IOException, JSONException {
+            Request request = new Request.Builder()
+                    .url(url)
+                    .build();
+            Response response = client.newCall(request).execute();
+            JSONArray array = new JSONArray(response.body().string());
+
+            for (int i = 0; i < array.length(); i++) {
+                JSONObject object = array.getJSONObject(i);
+                String image = URL_IMAGE+object.getString("image");
+                news.add(new News(
+                        object.getInt("id"),
+                        object.getString("title"),
+                        image,
+                        object.getString("content"),
+                        object.getInt("type")
+                ));
+            }
+            return news;
+        }
+    }
+
+
+    private List<News> fakeNews() {
         List<News> news = new ArrayList<>();
         news.add(new News(1,"“แมวจรจัด” ผู้ต้องสงสัยฆาตกรรมยายชาวญี่ปุ่นวัย 82 ปี","https://i.imgur.com/Jvh1OQm.jpg","ตำรวจญี่ปุ่นทำการสอบสวนคดีฆาตกรรมหญิงสูงวัยรายหนึ่ง โดยพบผู้ต้องสงสัยในคดีนี้ได้ ซึ่งไม่น่าจะเป็นไปได้ นั่นคือ แมวจรจัด\n" + "\n" +
                 "สำนักข่าวต่างประเทศรายงานว่า ตำรวจญี่ปุ่นได้รับแจ้งเหตุ นางมายูโกะ มัตสึโมโตะ อายุ 82 ปี ที่ไม่สามารถพูดได้ กลายเป็นศพเสียชีวิตปริศนาที่บ้าน ทางตอนใต้ของประเทศญี่ปุ่น โดยใบหน้าของเธอเต็มไปด้วยเลือด และมีแผลกว่า 20 แห่ง\n" +
@@ -88,30 +116,6 @@ public class SelectNews {
         news.add(new News(10,"title10","https://i.imgur.com/B0D4iRk.jpg","content10", 1));
 
         return news;
-
-
-        ///////////////////////////////////////////////////////////////////////////////////////
-
-
-    }
-
-    public static class getHttp {
-        OkHttpClient client = new OkHttpClient();
-        List<News> news = new ArrayList<>();
-
-        List<News> run(String url) throws IOException, JSONException {
-            Request request = new Request.Builder()
-                    .url(url)
-                    .build();
-            Response response = client.newCall(request).execute();
-            JSONArray array = new JSONArray(response.body().string());
-
-            for (int i = 0; i < array.length(); i++) {
-                JSONObject object = array.getJSONObject(i);
-                news.add(new News(object.getInt("id"),object.getString("title"),object.getString("image"),object.getString("content"), object.getInt("type")));
-            }
-            return news;
-        }
     }
 
 }
