@@ -7,15 +7,20 @@
     <ImageView
         android:layout_width="match_parent"
         android:layout_height="60dp"
-        android:src="@drawable/logo"
+        android:background="#000"
         android:padding="14dp"
-        android:background="#000"/>
+        android:src="@drawable/logo" />
 
-    <android.support.v7.widget.RecyclerView
-        android:id="@+id/home_recyclerView"
+    <android.support.v4.widget.SwipeRefreshLayout
+        android:id="@+id/home_swipeRefreshLayout"
         android:layout_width="match_parent"
         android:layout_height="match_parent"
         android:paddingTop="60dp">
-    </android.support.v7.widget.RecyclerView>
+        <android.support.v7.widget.RecyclerView
+            android:id="@+id/home_recyclerView"
+            android:layout_width="match_parent"
+            android:layout_height="match_parent">
+        </android.support.v7.widget.RecyclerView>
+    </android.support.v4.widget.SwipeRefreshLayout>
 
 </FrameLayout>
