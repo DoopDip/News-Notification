@@ -39,4 +39,6 @@ dependencies {
 
     compile 'com.google.android.gms:play-services-gcm:10.0.0'
     compile 'com.pushbots:pushbots-lib:3.0.1@aar'
+
+    compile 'com.github.rubensousa:gravitysnaphelper:1.3'
 }

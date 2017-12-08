@@ -5,6 +5,9 @@ import android.support.v7.app.AppCompatActivity;
 import android.os.Bundle;
 import android.support.v7.widget.LinearLayoutManager;
 import android.support.v7.widget.RecyclerView;
+import android.view.Gravity;
+
+import com.github.rubensousa.gravitysnaphelper.GravitySnapHelper;
 
 public class ListNewsActivity extends AppCompatActivity {
 
@@ -20,9 +23,10 @@ public class ListNewsActivity extends AppCompatActivity {
         recyclerView.setLayoutManager(new LinearLayoutManager(this));
         recyclerView.setAdapter(new NewsAdapter(SelectNews.listNews(bundle.getInt("newsType"), SelectNews.NO_ID)));
 
+        new GravitySnapHelper(Gravity.TOP).attachToRecyclerView(recyclerView);
+
         final SwipeRefreshLayout swipeRefreshLayout = (SwipeRefreshLayout)findViewById(R.id.listNews_swipeRefreshLayout);
         swipeRefreshLayout.setOnRefreshListener(new SwipeRefreshLayout.OnRefreshListener() {
-
             @Override
             public void onRefresh() {
                 recyclerView.setAdapter(new NewsAdapter(SelectNews.listNews(bundle.getInt("newsType"), SelectNews.NO_ID)));
