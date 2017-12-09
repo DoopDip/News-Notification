@@ -11,6 +11,7 @@ import android.widget.ImageView;
 import android.widget.RelativeLayout;
 import android.widget.TextView;
 
+import com.github.florent37.picassopalette.PicassoPalette;
 import com.squareup.picasso.Picasso;
 
 import java.util.List;
@@ -50,7 +51,19 @@ public class NewsAdapter extends RecyclerView.Adapter<NewsAdapter.NewsHolder> {
 
         holder.textViewType.setText(tagsName(news.type));
 
-        Picasso.with(holder.imageView.getContext()).load(news.image).into(holder.imageView);
+        Picasso.with(holder.imageView.getContext()).load(news.image).error(R.drawable.no_image).into(holder.imageView,
+                PicassoPalette.with(news.image,holder.imageView)
+                        .use(PicassoPalette.Profile.VIBRANT)
+                            .intoBackground(holder.textViewTitle)
+                            .intoTextColor(holder.textViewTitle)
+                            .intoBackground(holder.textViewType)
+                            .intoTextColor(holder.textViewType)
+                        .use(PicassoPalette.Profile.VIBRANT_DARK)
+                            .intoBackground(holder.textViewTitle, PicassoPalette.Swatch.RGB)
+                            .intoTextColor(holder.textViewTitle, PicassoPalette.Swatch.BODY_TEXT_COLOR)
+                            .intoBackground(holder.textViewType, PicassoPalette.Swatch.RGB)
+                            .intoTextColor(holder.textViewType, PicassoPalette.Swatch.BODY_TEXT_COLOR)
+                );
     }
 
     @Override

@@ -1,11 +1,8 @@
 <?xml version="1.0" encoding="utf-8"?>
-<RelativeLayout
+<RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
     android:id="@+id/listNews_box"
-    xmlns:android="http://schemas.android.com/apk/res/android"
     android:layout_width="match_parent"
-    android:layout_height="250dp"
-    android:layout_marginLeft="8dp"
-    android:layout_marginRight="8dp"
+    android:layout_height="350dp"
     android:layout_marginBottom="8dp">
 
     <ImageView
@@ -13,35 +10,46 @@
         android:layout_width="match_parent"
         android:layout_height="match_parent"
         android:adjustViewBounds="true"
-        android:scaleType="centerCrop"
-        android:background="#ddd"/>
+        android:background="#ddd"
+        android:scaleType="centerCrop" />
 
-    <TextView
-        android:id="@+id/listNews_title"
+
+    <LinearLayout
+        android:id="@+id/listNews_boxName"
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
-        android:text="หัวข้อข่าว"
         android:layout_alignParentBottom="true"
-        android:paddingLeft="20dp"
-        android:paddingTop="10dp"
-        android:paddingBottom="10dp"
-        android:paddingRight="10dp"
-        android:background="#b7000000"
-        android:textColor="#fff"
-        android:textSize="22dp"/>
+        android:orientation="vertical">
 
-    <TextView
-        android:id="@+id/listNews_type"
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
-        android:layout_marginTop="30dp"
-        android:layout_marginLeft="20dp"
-        android:background="#baffffff"
-        android:textColor="#c0000000"
-        android:paddingTop="5dp"
-        android:paddingBottom="5dp"
-        android:paddingRight="10dp"
-        android:paddingLeft="10dp"
-        android:text="ประเภทข่าว"/>
+
+        <TextView
+            android:id="@+id/listNews_type"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:background="#b7000000"
+            android:paddingTop="15dp"
+            android:paddingLeft="20dp"
+            android:text="ประเภทข่าว"
+            android:textColor="#fff"
+            android:textSize="17dp" />
+
+        <TextView
+            android:id="@+id/listNews_title"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:background="#b7000000"
+            android:paddingBottom="15dp"
+            android:paddingLeft="20dp"
+            android:paddingRight="10dp"
+            android:paddingTop="5dp"
+            android:singleLine="true"
+            android:text="หัวข้อข่าว"
+            android:textColor="#fff"
+            android:textSize="24dp"
+            android:textStyle="bold" />
+
+
+    </LinearLayout>
+
 
 </RelativeLayout>

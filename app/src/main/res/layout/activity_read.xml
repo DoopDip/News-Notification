@@ -44,7 +44,7 @@
         android:background="#b93d3d3d"
         android:padding="15dp"
         android:text="@string/content_news"
-        android:textSize="15dp" />
+        android:textSize="17dp" />
     </ScrollView>
 
 </RelativeLayout>
