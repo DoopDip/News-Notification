@@ -33,17 +33,17 @@ public class MainActivity extends FragmentActivity {
                 fragmentTransaction = getSupportFragmentManager().beginTransaction();
                 switch (item.getItemId()) {
                     case R.id.navigation_home:
-                        Log.d("Click","Home");
+                        Log.e("Click","Home");
                         HomeFragment homeFragment = new HomeFragment();
                         fragmentTransaction.replace(R.id.main_frameLayout, homeFragment).addToBackStack(null).commit();
                         return true;
                     case R.id.navigation_category:
-                        Log.d("Click","Category");
+                        Log.e("Click","Category");
                         CategoryFragment categoryFragment = new CategoryFragment();
                         fragmentTransaction.replace(R.id.main_frameLayout, categoryFragment).addToBackStack(null).commit();
                         return true;
                     case R.id.navigation_setting:
-                        Log.d("Click","Setting");
+                        Log.e("Click","Setting");
                         SettingFragment settingFragment = new SettingFragment();
                         fragmentTransaction.replace(R.id.main_frameLayout, settingFragment).addToBackStack(null).commit();
                         return true;

@@ -22,14 +22,14 @@ import java.util.List;
 
 public class NewsAdapter extends RecyclerView.Adapter<NewsAdapter.NewsHolder> {
 
-    private final String TAG_NEWS = "ข่าวเศรษกิจ";
-    private final String TAG_POLITICAL = "ข่าวการเมือง";
-    private final String TAG_TECHNOLOGY = "ข่าวเทคโนโลยี";
-    private final String TAG_ENTERTAINMENT = "ข่าวบันเทิง";
-    private final String TAG_EDUCATION = "ข่าวการศึกษา";
-    private final String TAG_CRIMINAL = "ข่าวอาชญากรรม";
-    private final String TAG_SPORT = "ข่าวกีฬา";
-    private final String TAG_SOCIAL = "ข่าวสังคม";
+    public static final String TAG_NEWS = "ข่าวเศรษกิจ";
+    public static final String TAG_POLITICAL = "ข่าวการเมือง";
+    public static final String TAG_TECHNOLOGY = "ข่าวเทคโนโลยี";
+    public static final String TAG_ENTERTAINMENT = "ข่าวบันเทิง";
+    public static final String TAG_EDUCATION = "ข่าวการศึกษา";
+    public static final String TAG_CRIMINAL = "ข่าวอาชญากรรม";
+    public static final String TAG_SPORT = "ข่าวกีฬา";
+    public static final String TAG_SOCIAL = "ข่าวสังคม";
 
     private List<News> list;
 
@@ -104,7 +104,7 @@ public class NewsAdapter extends RecyclerView.Adapter<NewsAdapter.NewsHolder> {
     }
 
     //SHOW Tag Name
-    private String tagsName(int tag) {
+    public static String tagsName(int tag) {
         if (tag == 1)
             return TAG_NEWS;
         else if (tag == 2)

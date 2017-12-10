@@ -6,12 +6,14 @@ import android.os.Bundle;
 import android.support.v7.widget.LinearLayoutManager;
 import android.support.v7.widget.RecyclerView;
 import android.view.Gravity;
+import android.widget.TextView;
 
 import com.github.rubensousa.gravitysnaphelper.GravitySnapHelper;
 
 public class ListNewsActivity extends AppCompatActivity {
 
     private RecyclerView recyclerView;
+    private TextView textViewTitle;
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
@@ -19,6 +21,10 @@ public class ListNewsActivity extends AppCompatActivity {
         setContentView(R.layout.activity_list_news);
 
         final Bundle bundle = getIntent().getExtras();
+
+        textViewTitle = (TextView) findViewById(R.id.list_title);
+        textViewTitle.setText(NewsAdapter.tagsName(bundle.getInt("newsType")));
+
         recyclerView = (RecyclerView) findViewById(R.id.listNews_recyclerView);
         recyclerView.setLayoutManager(new LinearLayoutManager(this));
         recyclerView.setAdapter(new NewsAdapter(SelectNews.listNews(bundle.getInt("newsType"), SelectNews.NO_ID)));
@@ -34,4 +40,5 @@ public class ListNewsActivity extends AppCompatActivity {
             }
         });
     }
+
 }

@@ -20,7 +20,7 @@ public class ReadActivity extends AppCompatActivity {
 
         Bundle bundle = getIntent().getExtras();
         String idNews = bundle.getString("newsId");
-        Log.d("idNews","="+idNews);
+        Log.e("idNews","="+idNews);
 
         List<News> news = SelectNews.listNews(SelectNews.ALL_NEWS, Integer.parseInt(idNews));
 

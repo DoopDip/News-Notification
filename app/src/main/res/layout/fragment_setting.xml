@@ -13,16 +13,19 @@
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
             android:text="@string/title_setting"
-            android:textSize="30dp"
-            android:background="#484747"
+            android:textSize="25dp"
+            android:background="#000"
+            android:textStyle="bold"
             android:gravity="center|center_horizontal"
-            android:padding="15dp" />
+            android:textColor="#fff"
+            android:padding="13dp" />
 
         <LinearLayout
             android:layout_below="@+id/setting_title"
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
             android:orientation="vertical"
+            android:paddingTop="20dp"
             android:id="@+id/linearLayout">
 
             <LinearLayout
