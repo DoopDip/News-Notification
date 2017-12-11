@@ -1,9 +1,5 @@
 package com.adv.newsnotification;
 
-/**
- * Created by narit on 15/11/2017 AD.
- */
-
 public class News {
 
     public int id;

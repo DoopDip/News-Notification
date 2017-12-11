@@ -16,10 +16,6 @@ import com.squareup.picasso.Picasso;
 
 import java.util.List;
 
-/**
- * Created by narit on 15/11/2017 AD.
- */
-
 public class NewsAdapter extends RecyclerView.Adapter<NewsAdapter.NewsHolder> {
 
     public static final String TAG_NEWS = "ข่าวเศรษกิจ";

@@ -14,10 +14,6 @@ import okhttp3.OkHttpClient;
 import okhttp3.Request;
 import okhttp3.Response;
 
-/**
- * Created by narit on 19/11/2017 AD.
- */
-
 public class SelectNews {
 
     private static final String URL_HOST = "http://10.5.50.10:8888/newsnotification";
