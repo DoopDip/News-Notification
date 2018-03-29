@@ -15,8 +15,7 @@ import okhttp3.Request;
 import okhttp3.Response;
 
 public class SelectNews {
-
-    private static final String URL_HOST = "http://10.5.50.10:8888/newsnotification";
+    private static final String URL_HOST = "http://192.168.1.34:8888/newsnotification";
     private static final String URL_GET_JSON = URL_HOST+"/json_news.php?";
     private static final String URL_IMAGE = URL_HOST+"/image/";
 
